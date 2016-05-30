@@ -5,7 +5,14 @@ var I18nAssetBuilder = require('./lib/i18n-asset-builder');
 
 module.exports = {
   name: 'ember-bundle-i18n',
+
+  isLocalizationFramework: true,
+
   treeForPublic: function(tree) {
-    return new I18nAssetBuilder(this.app.trees.app+'/i18n');
+    var outputPath = (this.app.options['ember-bundle-i18n'] && this.app.options['ember-bundle-i18n'].outputPath) || 'assets/i18n';
+
+    return new I18nAssetBuilder(this.app.trees.app + '/i18n', {
+      outputPath: outputPath
+    });
   }
 };
