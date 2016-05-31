@@ -43,7 +43,10 @@
     "ember-addon"
   ],
   "dependencies": {
+    "broccoli-concat": "^2.2.0",
     "broccoli-filter": "^1.2.3",
+    "broccoli-funnel": "^1.0.1",
+    "broccoli-merge-trees": "^1.1.1",
     "ember-cli-babel": "^5.1.6",
     "properties-parser": "^0.3.1"
   },
