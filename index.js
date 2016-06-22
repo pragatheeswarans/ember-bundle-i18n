@@ -3,6 +3,8 @@
 
 var path = require('path');
 
+var merge = require('lodash.merge');
+
 var I18nAssetBuilder = require('./lib/i18n-asset-builder');
 var I18nAssetMerger = require('./lib/i18n-asset-merger');
 
@@ -13,18 +15,28 @@ module.exports = {
 
   treeForPublic: function(tree) {
     var options = this.app.options['ember-bundle-i18n'] || {};
-    var outputPath = options.outputPath || 'assets/i18n';
-    var inputPath = options.inputPath || 'app/i18n';
+
+    var defaultOptions = {
+      defaultLocale: 'en',
+      inputPath: 'app/i18n',
+      outputPath: 'assets/i18n',
+      outputFilePrefix: 'MessageResources_'
+    };
+
+    options = merge(defaultOptions, options);
+
+    var inputPath = options.inputPath;
     inputPath = path.join(this.project.root, inputPath);
 
     var inputTree = new I18nAssetMerger(inputPath, {
-      outputPath: outputPath,
-      annotation: 'ember-bundle-i18n: merge properties'
+      outputPath: options.outputPath
     });
 
     return new I18nAssetBuilder(inputTree, {
-      outputPath: outputPath,
-      destDir: 'ember-bundle-i18n: parse properties'
+      outputPath: options.outputPath,
+      outputFilePrefix: options.outputFilePrefix,
+      defaultLocale: options.defaultLocale,
+      annotation: 'ember-bundle-i18n: parse properties'
     });
   }
 };
