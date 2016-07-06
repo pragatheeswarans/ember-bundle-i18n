@@ -49,7 +49,7 @@ default value: assets/i18n
 Use this option to customise the prefix of your i18n asset output files.
 If you do not want any prefix you can pass '' in the options.
 
-defaultLocale: 'MessageResources_'
+default prefix: 'MessageResources_'
 
 ## Installation
 
