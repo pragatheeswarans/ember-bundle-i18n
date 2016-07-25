@@ -1,4 +1,4 @@
-# Ember-bundle-i18n
+# Ember-bundle-i18n [![Build Status](https://travis-ci.org/pragatheeswarans/ember-bundle-i18n.svg?branch=master)](https://travis-ci.org/pragatheeswarans/ember-bundle-i18n)
 
 A simple addon to process i18n source files from `.properties`. Provides `{{translate}}`
 helper and a `util:translate`.
