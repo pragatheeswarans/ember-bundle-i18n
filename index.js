@@ -14,6 +14,12 @@ module.exports = {
   isLocalizationFramework: true,
 
   treeForPublic: function(tree) {
+    // Skip public tree construction for addons and engines for now
+    // Need to iron out the cases and enable this as a feature
+    if (!this.app) {
+      return;
+    }
+
     var options = this.app.options['ember-bundle-i18n'] || {};
 
     var defaultOptions = {
