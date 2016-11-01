@@ -13,7 +13,7 @@
   },
   "repository": "https://github.com/pragatheeswarans/ember-bundle-i18n.git",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 4"
   },
   "author": "",
   "license": "MIT",
