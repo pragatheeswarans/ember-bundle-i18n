@@ -26,7 +26,8 @@ module.exports = {
       defaultLocale: 'en',
       inputPath: 'app/i18n',
       outputPath: 'assets/i18n',
-      outputFilePrefix: 'MessageResources_'
+      outputFilePrefix: 'MessageResources_',
+      prefixOtherLangFiles: true
     };
 
     options = merge(defaultOptions, options);
@@ -42,6 +43,7 @@ module.exports = {
       outputPath: options.outputPath,
       outputFilePrefix: options.outputFilePrefix,
       defaultLocale: options.defaultLocale,
+      prefixOtherLangFiles: options.prefixOtherLangFiles,
       annotation: 'ember-bundle-i18n: parse properties'
     });
   }
