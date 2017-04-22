@@ -47,7 +47,7 @@
     "broccoli-funnel": "^1.0.1",
     "broccoli-merge-trees": "^1.1.1",
     "broccoli-plugin": "^1.2.1",
-    "ember-cli-babel": "^5.1.6",
+    "ember-cli-babel": "^6.0.0",
     "lodash.merge": "^4.4.0",
     "mkdirp": "^0.5.1",
     "properties-parser": "^0.3.1"
